@@ -1,7 +1,1 @@
-function doStuff(arg1, arg2) {
-    let result = arg1 + arg2;
-    console.log(result);
-    return result;
-  }
-  
-  console.log("Returned:", doStuff(1, 3));
+console.log("there is nothing to see in the console either, so piss off")
