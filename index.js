@@ -1,1 +1,1 @@
-console.log("there is nothing to see in the console either, so piss off")
+console.log("this is a joke of course")
