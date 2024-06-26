@@ -1,1 +1,1 @@
-console.log("this is a joke of course")
+console.log("im very sorry that you had to witness this, i'm a beginner")
