@@ -1,13 +1,13 @@
 body {
-    background-color: #070707;
-    color: #ffffff; 
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
+  background-color: #070707;
+  color: #ffffff;
+  font-family: 'Rubik', sans-serif;
+  margin: 30px;
+  padding: 30px;
+}
+
 h1 {
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
@@ -16,52 +16,124 @@ h2 {
 }
 
 h3 {
-  margin: 20px auto; 
+  margin: 20px auto;
   width: 75%;
   text-align: left;
   text-align: justify;
-  color: #ffffff; 
+  color: #ffffff;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(*) {
+  animation-duration: .33s;
+}
+
+::view-transition-old(root) {
+  animation: .33s ease-in both leave;
+}
+
+::view-transition-new(root) {
+  animation: .33s ease-in both enter;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*) {
+    animation-duration: 0s;
+  }
+}
+
+.container {
+  display: flex;
+}
+
+.container .left,
+.container .right {
+  flex: 1;
 }
 
 .custom-divider {
-  border: none; 
+  border: none;
   border-top: 2px solid #ffffff;
-  margin: 20px auto; 
-  width: 80%; 
+  margin: 20px auto;
+  width: 100%;
   opacity: 0.7;
+}
+
+.no_margin {
+  margin: 0px auto;
 }
 
 .custom-divider-2 {
-  border: none; 
+  border: none;
   border-top: 2px solid #7f7f7f;
-  margin: 20px auto; 
-  width: 50%; 
+  margin: 20px auto;
+  width: 100%;
   opacity: 0.7;
 }
 
-.text-follows-divider-margins {
-  margin: 20px auto; 
-  width: 80%;
-  text-align: justify;
-  color: #ffffff; 
+.h2_portfolio_subtype_title {
+  font-weight: normal;
+  margin: 0px auto;
+  transition: all 0.2s;
+  transition-timing-function: cubic-bezier(0, .57, 0, 1.12);
 }
 
 
+.text-follows-divider-margins {
+  margin: 20px auto;
+  width: 100%;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.div_portfolio_work_subtype {
+  display: inline-block;
+  border: 2px solid #ffffff;
+  border-radius: 0px;
+  opacity: 0.7;
+  padding: 20px;
+  margin: 10px;
+  transition: all 0.2s;
+  vertical-align: top;
+  width: 45%;
+  transition-timing-function: cubic-bezier(0, .57, 0, 1.12);
+}
+
+.div_portfolio_work_subtype:hover {
+  border: 2px dashed #0073ff;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.div_portfolio_work_subtype:hover .h2_portfolio_subtype_title {
+  margin: 10px auto;
+  font-weight: bold;
+}
+
 .button-link {
-  display: block; 
-  margin: 20px auto; 
-  padding: 10px 20px;
+  display: block;
+  margin: 10px auto;
+  padding-top: 10px;
+  /* let me explain why i did top,bottom,left
+     instead of some other voodoo method
+     its fairly simple, im just lazy */
+  padding-bottom: 10px;
+  padding-left: 10px;
   color: #ffffff;
   background-color: #1c1c1c;
   text-decoration: none;
-  border: 2px solid #ffffff;
-  border-radius: 5px;
+  border-left: 1px solid #ffffff;
+  border-radius: 1px;
   font-size: 16px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.15s ease-out;
 }
 
 .button-link:hover {
   background-color: #ffffff;
   color: #1c1c1c;
-  border: 2px solid #0073ff
+  font-weight: bold;
+  border-left: 2px solid #0073ff
 }
