@@ -113,6 +113,147 @@ h3 {
   font-weight: bold;
 }
 
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.carousel .slide {
+  display: none;
+  position: relative;
+}
+
+.carousel input[type=radio] {
+  display: none;
+}
+
+.carousel input[type=radio]:checked+.slide {
+  display: block;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel .nav {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.carousel .nav.prev {
+  left: 0;
+}
+
+.carousel .nav.next {
+  right: 0;
+}
+
+.carousel .thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.carousel .thumbnails img {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.3s, border 0.3s;
+}
+
+.carousel .thumbnails img:hover {
+  opacity: 1;
+}
+
+.thumbnails {
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-top:12px;
+}
+.thumbnails img { width:120px; height:auto; cursor:pointer; opacity:0.85; transition:opacity .15s; }
+.thumbnails img:hover { opacity:1; }
+
+.lightbox {
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.85);
+  opacity:0;
+  pointer-events:none;
+  z-index:9999;
+  transition: opacity .20s ease;
+}
+
+.lightbox:target {
+  opacity:1;
+  pointer-events:auto;
+}
+
+.lightbox .lightbox-bg {
+  position:absolute;
+  inset:0;
+  display:block;
+  text-decoration:none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lightbox .lightbox-content {
+  position:relative;
+  z-index:2;
+  max-width:90%;
+  max-height:90%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px;
+  box-sizing:border-box;
+}
+
+.lightbox .lightbox-content img {
+  max-width:100%;
+  max-height:100%;
+  display:block;
+  transform: scale(0.80);
+  opacity: 0;
+  transition:
+    transform 0.20s cubic-bezier(0, .57, 0, 1.12),
+    opacity 0.18s linear;
+  will-change: transform, opacity;
+}
+
+.lightbox:target .lightbox-content img {
+  transform: scale(1);
+  opacity:1;
+}
+
+.lightbox:target .lightbox-content img:hover {
+  transform: scale(1.06);
+  transition: transform 0.15s cubic-bezier(0, .57, 0, 1.12);
+  cursor: zoom-out;
+}
+
+
+@media (max-width:600px) {
+  .thumbnails img { width:72px; }
+  .lightbox .lightbox-content { padding:4px; }
+  .lightbox .lightbox-content img { transform: scale(0.88); }
+  .lightbox:target .lightbox-content img { transform: scale(1); }
+}
+
+
+
 .button-link {
   display: block;
   margin: 10px auto;

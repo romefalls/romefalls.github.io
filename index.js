@@ -1,1 +1,1 @@
-console.log("i hate javascript")
+console.log("no javascript needed here, you react native noobs suck")
