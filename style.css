@@ -168,6 +168,7 @@ h3 {
   max-width: 800px;
   margin: auto;
   z-index: 1000;
+  overflow: hidden;
 }
 
 .carousel .slide {
