@@ -1,80 +1,80 @@
 body {
-  background-color: var(--bg, #000000);
-  color: var(--fg, #ffffff);
-  font-family: 'Rubik', sans-serif;
-  padding: 0px;
+    background-color: var(--bg, #000000);
+    color: var(--fg, #ffffff);
+    font-family: 'Rubik', sans-serif;
+    padding: 0px;
     margin: 0px;
 }
 
 :root {
-  --ease-default: cubic-bezier(0, .57, 0, 1.5);
-  --ease-fast: ease-out;
-  --transition-short: 0.15s;
-  --transition-medium: 0.2s;
-  --transition-long: 0.33s;
-  --bg: #000000;
-  --fg: #ffffff;
-  --muted: #7f7f7f;
-  --accent: #0073ff;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --backdrop-blur: 8px;
+    --ease-default: cubic-bezier(0, .57, 0, 1.5);
+    --ease-fast: ease-out;
+    --transition-short: 0.15s;
+    --transition-medium: 0.2s;
+    --transition-long: 0.33s;
+    --bg: #000000;
+    --fg: #ffffff;
+    --muted: #7f7f7f;
+    --accent: #0073ff;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --backdrop-blur: 8px;
 }
 
 .content,
 body>main,
 body>.container {
-  max-width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 
 .t-short {
-  transition-duration: var(--transition-short) !important;
+    transition-duration: var(--transition-short) !important;
 }
 
 .t-medium {
-  transition-duration: var(--transition-medium) !important;
+    transition-duration: var(--transition-medium) !important;
 }
 
 .t-long {
-  transition-duration: var(--transition-long) !important;
+    transition-duration: var(--transition-long) !important;
 }
 
 .ease-default {
-  transition-timing-function: var(--ease-default) !important;
+    transition-timing-function: var(--ease-default) !important;
 }
 
 .ease-fast {
-  transition-timing-function: var(--ease-fast) !important;
+    transition-timing-function: var(--ease-fast) !important;
 }
 
 .ease-default-all {
-  transition: all var(--transition-medium) var(--ease-default) !important;
+    transition: all var(--transition-medium) var(--ease-default) !important;
 }
 
 .text-no-shift {
-  display: inline-block;
-  transform-origin: 0 0;
-  will-change: transform;
+    display: inline-block;
+    transform-origin: 0 0;
+    will-change: transform;
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 h2 {
-  text-align: center;
-  margin: 30px auto;
+    text-align: center;
+    margin: 30px auto;
 }
 
 h3 {
-  margin: 20px auto;
-  width: 75%;
-  text-align: center;
-  text-align: justify;
-  color: #ffffff;
+    margin: 20px auto;
+    width: 75%;
+    text-align: center;
+    text-align: justify;
+    color: #ffffff;
 }
 
 p {
@@ -96,425 +96,456 @@ blockquote {
 }
 
 @view-transition {
-  navigation: auto;
+    navigation: auto;
 }
 
 ::view-transition-group(*) {
-  animation-duration: .33s;
+    animation-duration: .33s;
 }
 
 ::view-transition-old(root) {
-  animation: .33s ease-in both leave;
+    animation: .33s ease-in both leave;
 }
 
 ::view-transition-new(root) {
-  animation: .33s ease-in both enter;
+    animation: .33s ease-in both enter;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*) {
-    animation-duration: 0s;
-  }
+    ::view-transition-group(*) {
+        animation-duration: 0s;
+    }
 }
 
 .container {
-  display: flex;
+    display: flex;
 }
 
 .container .left,
 .container .right {
-  flex: 1;
+    flex: 1;
 }
 
 .custom-divider {
-  border: none;
-  border-top: 2px solid var(--fg);
-  margin: 20px auto;
-  width: 100%;
-  opacity: 0.7;
+    border: none;
+    border-top: 2px solid var(--fg);
+    margin: 20px auto;
+    width: 100%;
+    opacity: 0.7;
 }
 
 .no_margin {
-  margin: 0px auto;
+    margin: 0px auto;
 }
 
 .custom-divider-2 {
-  border: none;
-  border-top: 2px solid var(--muted);
-  margin: 20px auto;
-  width: 100%;
-  opacity: 0.7;
+    border: none;
+    border-top: 2px solid var(--muted);
+    margin: 20px auto;
+    width: 100%;
+    opacity: 0.7;
 }
 
 .h2_portfolio_subtype_title {
-  font-weight: normal;
-  margin: 0px auto;
-  transition: all var(--transition-medium) var(--ease-default);
+    font-weight: normal;
+    margin: 0px auto;
+    transition: all var(--transition-medium) var(--ease-default);
 }
 
 
 .text-follows-divider-margins {
-  margin: 20px auto;
-  width: 100%;
-  text-align: justify;
-  color: #ffffff;
+    margin: 20px auto;
+    width: 100%;
+    text-align: justify;
+    color: #ffffff;
 }
 
 .div_portfolio_work_subtype {
-  display: inline-block;
-  border: 2px solid #ffffff;
-  border-radius: 0px;
-  opacity: 0.7;
-  padding: 20px;
-  margin: 10px;
-  vertical-align: top;
-  width: 45%;
-  transition: all var(--transition-medium) var(--ease-default);
+    display: inline-block;
+    border: 2px solid #ffffff;
+    border-radius: 0px;
+    opacity: 0.7;
+    padding: 20px;
+    margin: 10px;
+    vertical-align: top;
+    width: 45%;
+    transition: all var(--transition-medium) var(--ease-default);
 }
 
 .div_portfolio_work_subtype:hover {
-  border: 2px dashed var(--accent);
-  opacity: 1;
-  border-radius: 15px;
+    border: 2px dashed var(--accent);
+    opacity: 1;
+    border-radius: 15px;
 }
 
 .div_portfolio_work_subtype:hover .h2_portfolio_subtype_title {
-  margin: 10px auto;
-  font-weight: bold;
+    margin: 10px auto;
+    font-weight: bold;
 }
 
 .carousel {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
-  z-index: 1000;
-  overflow: hidden;
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    z-index: 1000;
+    overflow: hidden;
 }
 
 .carousel .slide {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
 
 .carousel input[type=radio] {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  clip-path: inset(50%) !important;
-  overflow: hidden !important;
-  white-space: nowrap !important;
-  opacity: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    opacity: 0 !important;
 }
 
 .carousel input[type=radio]:checked+.slide {
-  display: block;
+    display: block;
 }
 
 .carousel .thumbnails {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .carousel .thumbnails a {
-  cursor: pointer;
-  display: inline-block;
-  border: 2px solid transparent;
-  text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 2px solid transparent;
+    text-decoration: none;
 }
 
 .carousel .thumbnails a img {
-  width: 84px;
-  height: auto;
-  display: block;
-  opacity: 0.8;
+    width: 84px;
+    height: auto;
+    display: block;
+    opacity: 0.8;
 }
 
 .carousel .thumbnails a:hover img {
-  opacity: 1;
+    opacity: 1;
 }
 
 .carousel .slide img {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .carousel .nav {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .carousel .nav.prev {
-  left: 0;
+    left: 0;
 }
 
 .carousel .nav.next {
-  right: 0;
+    right: 0;
 }
 
 .carousel .thumbnails {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  justify-content: center;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
 }
 
 .carousel .thumbnails img {
-  width: 100px;
-  height: auto;
-  cursor: pointer;
-  opacity: 0.6;
-  border: 2px solid transparent;
-  transition: opacity 0.3s, border 0.3s;
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: opacity 0.3s, border 0.3s;
 }
 
 .carousel .thumbnails img:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .thumbnails {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 12px;
 }
 
 .thumbnails img {
-  width: 120px;
-  height: auto;
-  cursor: pointer;
-  opacity: 0.85;
-  transition: opacity .15s;
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity .15s;
 }
 
 .thumbnails img:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .lightbox {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transition: opacity var(--transition-medium) var(--ease-fast);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity var(--transition-medium) var(--ease-fast);
 }
 
 .lightbox .lightbox-bg {
-  position: absolute;
-  inset: 0;
-  display: block;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  background-color: rgba(0, 0, 0, 0.45);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  transition: background-color var(--transition-medium) var(--ease-fast);
+    position: absolute;
+    inset: 0;
+    display: block;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background-color var(--transition-medium) var(--ease-fast);
 }
 
 .lightbox:target {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .lightbox:target .lightbox-bg {
-  backdrop-filter: blur(var(--backdrop-blur));
-  -webkit-backdrop-filter: blur(var(--backdrop-blur));
-  background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(var(--backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--backdrop-blur));
+    background-color: rgba(0, 0, 0, 0.45);
 }
 
 @supports not (backdrop-filter: blur(8px)) {
-  .lightbox .lightbox-bg {
-    background-color: rgba(0, 0, 0, 0.65);
-  }
+    .lightbox .lightbox-bg {
+        background-color: rgba(0, 0, 0, 0.65);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lightbox .lightbox-bg {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background-color: rgba(0, 0, 0, 0.75);
-    transition: none;
-  }
+    .lightbox .lightbox-bg {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: rgba(0, 0, 0, 0.75);
+        transition: none;
+    }
 }
 
 .lightbox .lightbox-content {
-  position: relative;
-  z-index: 2;
-  max-width: 90%;
-  max-height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    box-sizing: border-box;
 }
 
 .lightbox .lightbox-content img {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  transform: scale(0.80);
-  opacity: 0;
-  transition:
-    transform var(--transition-medium) var(--ease-default),
-    opacity 0.18s linear;
-  will-change: transform, opacity;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    transform: scale(0.80);
+    opacity: 0;
+    transition:
+        transform var(--transition-medium) var(--ease-default),
+        opacity 0.18s linear;
+    will-change: transform, opacity;
 }
 
 .lightbox:target .lightbox-content img {
-  transform: scale(1);
-  opacity: 1;
+    transform: scale(1);
+    opacity: 1;
 }
 
 .lightbox:target .lightbox-content img:hover {
-  transform: scale(1.06);
-  transition: transform var(--transition-short) var(--ease-default);
+    transform: scale(1.06);
+    transition: transform var(--transition-short) var(--ease-default);
 }
 
 
 @media (max-width:600px) {
-  .thumbnails img {
-    width: 72px;
-  }
+    .thumbnails img {
+        width: 72px;
+    }
 
-  .lightbox .lightbox-content {
-    padding: 4px;
-  }
+    .lightbox .lightbox-content {
+        padding: 4px;
+    }
 
-  .lightbox .lightbox-content img {
-    transform: scale(0.88);
-  }
+    .lightbox .lightbox-content img {
+        transform: scale(0.88);
+    }
 
-  .lightbox:target .lightbox-content img {
-    transform: scale(1);
-  }
+    .lightbox:target .lightbox-content img {
+        transform: scale(1);
+    }
 }
 
 
 
 .button-link {
-  display: block;
-  margin: 10px auto;
-  padding-top: 10px;
-  /* let me explain why i did top,bottom,left
+    display: block;
+    margin: 10px auto;
+    padding-top: 10px;
+    /* let me explain why i did top,bottom,left
      instead of some other voodoo method
      its fairly simple, im just lazy */
-  padding-bottom: 10px;
-  padding-left: 10px;
-  color: var(--fg);
-  background-color: #1c1c1c;
-  text-decoration: none;
-  border-left: 1px solid #ffffff;
-  border-radius: 1px;
-  font-size: 16px;
-  transition: all 0.15s ease-out;
+    width: 20%;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    /* reserve space on the right for the external-link icon */
+    padding-right: 36px;
+    /* make ::after position absolute relative to this element */
+    position: relative;
+    color: var(--fg);
+    background-color: #1c1c1c;
+    text-decoration: none;
+    border-left: 1px solid #ffffff;
+    border-radius: 1px;
+    font-size: 16px;
+    transition: all 0.15s ease-out;
 }
 
 .button-link:hover {
-  background-color: var(--fg);
-  color: #1c1c1c;
-  font-weight: bold;
-  border-left: 2px solid var(--accent)
+    background-color: var(--fg);
+    color: #1c1c1c;
+    font-weight: bold;
+    border: 2px solid var(--accent);
+    padding-right: 44px;
 }
+
+.button-link::after {
+    /* hide the pseudo-element icon now that we use inline SVG for coloring */
+    display: none;
+}
+
+/* inline SVG inside .button-link — positioned like the old ::after */
+.button-link svg {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    pointer-events: none;
+    opacity: 0.8;
+    transition: opacity var(--transition-short), transform var(--transition-short);
+}
+
+.button-link:hover svg {
+    opacity: 1;
+}
+
 
 /* testimonials */
 .div_portfolio_work_subtype.full {
-  width: 94%;
+    width: 94%;
 }
 
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
 }
 
 .testimonial-card {
-  border: 1px solid var(--fg);
-  border-radius: 0px;
-  padding: 16px;
-  background: var(--card-bg);
-  transition: all var(--transition-medium) var(--ease-default);
+    border: 1px solid var(--fg);
+    border-radius: 0px;
+    padding: 16px;
+    background: var(--card-bg);
+    transition: all var(--transition-medium) var(--ease-default);
 }
 
 .testimonial-card:hover {
-  border-radius: 16px;
-  border: 2px dashed #0073ff;
-  transform: translateY(-10px);
+    border-radius: 16px;
+    border: 2px dashed #0073ff;
+    transform: translateY(-10px);
 }
 
 .testimonial-card blockquote {
-  margin: 0;
-  color: #eaeaea;
-  font-size: 0.95rem;
-  line-height: 1.45;
+    margin: 0;
+    color: #eaeaea;
+    font-size: 0.95rem;
+    line-height: 1.45;
 }
 
 .testimonial-card figcaption {
-  margin-top: 10px;
-  color: #ffffff;
-  opacity: 0.85;
-  font-weight: 500;
+    margin-top: 10px;
+    color: #ffffff;
+    opacity: 0.85;
+    font-weight: 500;
 }
 
 .ratings {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #2a2a2a;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #2a2a2a;
 }
 
 .rating {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px 0;
 }
 
 .rating .label {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .stars {
-  color: #ffd166;
-  letter-spacing: 1px;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Rubik", sans-serif;
+    color: #ffd166;
+    letter-spacing: 1px;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Rubik", sans-serif;
 }
 
 .stars.not-rated {
-  color: #7f7f7f;
-  letter-spacing: 0;
+    color: #7f7f7f;
+    letter-spacing: 0;
 }
 
 .about-me {
-  background: rgba(255, 255, 255, 0.02);
-  padding: 12px 18px;
-  margin: 12px 0 18px 0;
-  border-left: 3px solid var(--accent);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 12px 18px;
+    margin: 12px 0 18px 0;
+    border-left: 3px solid var(--accent);
 }
 
 .code-sample pre {
-  background: rgba(0, 0, 0, 0.5);
-  color: #eaeaea;
-  padding: 12px;
-  overflow: auto;
-  border-radius: 6px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #eaeaea;
+    padding: 12px;
+    overflow: auto;
+    border-radius: 6px;
 }
 
 .code-sample code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
-  font-size: 0.95rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+    font-size: 0.95rem;
 }

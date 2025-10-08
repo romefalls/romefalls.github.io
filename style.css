@@ -395,6 +395,10 @@ h3 {
      its fairly simple, im just lazy */
   padding-bottom: 10px;
   padding-left: 10px;
+  /* reserve space on the right for the external-link icon */
+  padding-right: 36px;
+  /* allow ::after to position absolutely relative to this element */
+  position: relative;
   color: var(--fg);
   background-color: #1c1c1c;
   text-decoration: none;
@@ -408,7 +412,32 @@ h3 {
   background-color: var(--fg);
   color: #1c1c1c;
   font-weight: bold;
-  border-left: 2px solid var(--accent)
+  border-left: 2px solid var(--accent);
+  padding-right: 44px;
+}
+
+.button-link::after {
+  /* hide the old pseudo-element icon — inline SVG is used instead */
+  display: none;
+}
+
+/* inline SVG inside .button-link — positioned like the old ::after */
+.button-link svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  pointer-events: none;
+  opacity: 0.8;
+  transition: opacity var(--transition-short), transform var(--transition-short);
+}
+
+.button-link:hover svg {
+  opacity: 1;
 }
 
 /* testimonials */
