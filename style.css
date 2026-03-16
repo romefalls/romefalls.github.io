@@ -1,4 +1,5 @@
-@font-face { /* i know how this looks... :-/ */
+@font-face {
+  /* i know how this looks... :-/ */
   font-family: 'BlenderPro';
   src: url('/asset/font/blender-pro/thin.ttf') format('truetype');
   font-weight: 100;
@@ -33,6 +34,7 @@
   src: url('/asset/font/blender-pro/heavy.ttf') format('truetype');
   font-weight: 900;
 }
+
 body {
   background-color: var(--bg, #413030);
   color: var(--fg, #ffffff);
@@ -431,8 +433,9 @@ h3 {
 
 .button-link {
   display: block;
-  margin: 10px auto;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  max-width: 25%;
+  margin: 10px 0;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
   padding-top: 10px;
   /* let me explain why i did top,bottom,left
      instead of some other voodoo method
@@ -462,7 +465,7 @@ h3 {
   background: var(--accent);
   clip-path: polygon(100% 0, 0 0, 100% 100%);
   transition: width var(--transition-medium) var(--ease-default),
-              height var(--transition-medium) var(--ease-default);
+    height var(--transition-medium) var(--ease-default);
 }
 
 .button-link:hover::before {
@@ -480,7 +483,7 @@ h3 {
   color: #1c1c1c;
   font-weight: bold;
   border-left: 2px solid var(--accent);
-    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
 }
 
 .button-link::after {
@@ -493,7 +496,7 @@ h3 {
   color: #ffffff;
   border-left: 2px solid #ffffff;
   transition: all 0.05s ease-out;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
 }
 
 .button-link:active svg {
@@ -528,6 +531,113 @@ h3 {
 
 .button-link:hover svg {
   opacity: 1;
+}
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.friend-card {
+  border: 1px solid var(--fg);
+  padding: 16px;
+  background: var(--card-bg);
+  transition: all var(--transition-medium) var(--ease-default);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.friend-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.friend-card-tab {
+  height: 14px;
+  width: 45%;
+  background: var(--card-bg);
+  border: 1px solid var(--fg);
+  border-bottom: none;
+  border-right: none; /* remove right border, pseudo-element handles the corner */
+  align-self: flex-start;
+  transition: all var(--transition-medium) var(--ease-default);
+  position: relative;
+}
+
+.friend-card-tab::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 9px 9px 0;
+  border-color: transparent var(--bg) transparent transparent;
+  transition: border-color var(--transition-medium) var(--ease-default);
+}
+
+.friend-card-tab::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 9px;
+  height: 9px;
+  background: none;
+  border-right: 1px solid var(--fg);
+  transform-origin: top right;
+  transform: rotate(-45deg) scaleX(0.707);
+  transition: border-color var(--transition-medium) var(--ease-default);
+}
+
+.friend-card-wrapper:hover .friend-card-tab::after {
+  border-color: var(--accent);
+}
+
+.friend-card-wrapper:hover .friend-card {
+  border-color: var(--accent);
+}
+
+.friend-card-wrapper:hover .friend-card-tab {
+  height: 0;
+  opacity: 0;
+}
+.friend-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--muted);
+}
+
+.friend-name {
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  color: var(--fg);
+}
+
+.friend-bio {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.friend-country {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.button-link.friend-link {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  max-width: 100%;
 }
 
 /* testimonials */
