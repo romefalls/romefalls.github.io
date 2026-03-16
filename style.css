@@ -1,10 +1,53 @@
+@font-face { /* i know how this looks... :-/ */
+  font-family: 'BlenderPro';
+  src: url('/asset/font/blender-pro/thin.ttf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'BlenderPro';
+  src: url('/asset/font/blender-pro/book.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'BlenderPro';
+  src: url('/asset/font/blender-pro/medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'BlenderPro';
+  src: url('/asset/font/blender-pro/bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'BlenderPro';
+  src: url('/asset/font/blender-pro/bolder.ttf') format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'BlenderPro';
+  src: url('/asset/font/blender-pro/heavy.ttf') format('truetype');
+  font-weight: 900;
+}
 body {
-  background-color: var(--bg, #070707);
+  background-color: var(--bg, #413030);
   color: var(--fg, #ffffff);
-  font-family: 'Rubik', sans-serif;
+  font-family: 'BlenderPro', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
   margin: 30px;
   padding: 30px;
 }
+
+h1 {
+  font-weight: bolder;
+}
+
+
 
 :root {
   --ease-default: cubic-bezier(0, .57, 0, 1.5);
@@ -12,10 +55,10 @@ body {
   --transition-short: 0.15s;
   --transition-medium: 0.2s;
   --transition-long: 0.33s;
-  --bg: #070707;
-  --fg: #ffffff;
-  --muted: #7f7f7f;
-  --accent: #0073ff;
+  --bg: #272730;
+  --fg: #9b9494;
+  --muted: #666666;
+  --accent: #a59d9d;
   --card-bg: rgba(255, 255, 255, 0.03);
   --backdrop-blur: 8px;
 }
@@ -127,7 +170,7 @@ h3 {
 }
 
 .h2_portfolio_subtype_title {
-  font-weight: normal;
+  font-weight: 650;
   margin: 0px auto;
   transition: all var(--transition-medium) var(--ease-default);
 }
@@ -160,7 +203,7 @@ h3 {
 
 .div_portfolio_work_subtype:hover .h2_portfolio_subtype_title {
   margin: 10px auto;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .carousel {
@@ -389,6 +432,7 @@ h3 {
 .button-link {
   display: block;
   margin: 10px auto;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
   padding-top: 10px;
   /* let me explain why i did top,bottom,left
      instead of some other voodoo method
@@ -408,20 +452,55 @@ h3 {
   transition: all 0.15s ease-out;
 }
 
+.button-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  transition: width var(--transition-medium) var(--ease-default),
+              height var(--transition-medium) var(--ease-default);
+}
+
+.button-link:hover::before {
+  width: 18px;
+  height: 18px;
+}
+
+.button-link:active::before {
+  width: 14px;
+  height: 14px;
+}
+
 .button-link:hover {
   background-color: var(--fg);
   color: #1c1c1c;
   font-weight: bold;
   border-left: 2px solid var(--accent);
-  padding-right: 44px;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
 }
 
 .button-link::after {
-  /* hide the old pseudo-element icon — inline SVG is used instead */
   display: none;
 }
 
-/* inline SVG inside .button-link — positioned like the old ::after */
+.button-link:active {
+  transform: scaleX(0.98) translateX(4px);
+  background-color: var(--accent);
+  color: #ffffff;
+  border-left: 2px solid #ffffff;
+  transition: all 0.05s ease-out;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+}
+
+.button-link:active svg {
+  opacity: 1;
+  transform: translateY(-50%) translate(3px, 0px);
+}
+
 .button-link svg {
   position: absolute;
   right: 12px;
@@ -434,6 +513,17 @@ h3 {
   pointer-events: none;
   opacity: 0.8;
   transition: opacity var(--transition-short), transform var(--transition-short);
+}
+
+.button-link.entry {
+  display: flex;
+  gap: 16px;
+}
+
+.button-link.entry .date {
+  color: var(--muted);
+  font-size: 0.85em;
+  min-width: 100px;
 }
 
 .button-link:hover svg {
