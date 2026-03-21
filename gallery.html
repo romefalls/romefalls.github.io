@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>romefalls</title>
+  <title>gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <h1>gallery</h1>
   <hr class="custom-divider">
-    once i have soemthing cool to put here, i will put here. thanks for your impatience.<br>
-    It may also take a long while because i have to set up images for lazyloading and compress thumbnails and so on.
-  <br>
-  <a href="index.html" class="text-follows-divider-margins button-link">my god can you shut up already</a>
+
+  <div class="thumbnails">
+    <a href="#lb-1"><img src="asset/image/thumbnail/gallery/AGC_20251204_144555065.webp" alt="photo 1"></a>
+    <a href="#lb-1"><img src="asset/image/thumbnail/gallery/AGC_20260202_075656671.webp" alt="photo 2"></a>
+  </div>
+
+  <div class="lightbox" id="lb-1">
+    <a class="lightbox-bg" href="#"></a>
+    <div class="lightbox-content">
+      <img src="asset/image/original/gallery/AGC_20251204_144555065.jpg" alt="photo 1">
+      <img src="asset/image/original/gallery/AGC_20260202_075656671.jpg" alt="photo 2">
+    </div>
+  </div>
+
 
 </body>
-
 </html>
