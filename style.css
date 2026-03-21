@@ -57,6 +57,7 @@ h1 {
   --transition-short: 0.15s;
   --transition-medium: 0.2s;
   --transition-long: 0.33s;
+  --body-bg: #141414;
   --bg: #272730;
   --fg: #9b9494;
   --muted: #666666;
@@ -101,6 +102,12 @@ body>.container {
   display: inline-block;
   transform-origin: 0 0;
   will-change: transform;
+}
+html {
+  background-color: var(--body-bg);
+}
+body {
+  background-color: var(--bg);
 }
 
 h1 {
